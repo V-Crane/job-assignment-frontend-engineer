@@ -1,47 +1,63 @@
 import './NavBar.css'
+import { Link } from 'react-router-dom'; // Import Link
+import { useUser } from '../../contexts/UserContext';
 
 export const NavBar = () => {
-  const login  = false
+  const { user, setUser } = useUser();
+
+  const handleLogout = () => {
+    setUser(null);
+  };
 
   return (
     <nav className="navbar navbar-light">
       <div className="container">
-        <a className="navbar-brand" href="/public#">
+        <Link className="navbar-brand" to="/">
           conduit
-        </a>
+        </Link>
         <ul className="nav navbar-nav pull-xs-right">
           <li className="nav-item">
-            {/* Add "active" class when you're on that page" */}
-            <a className="nav-link active" href="/public#">
+            <Link className="nav-link active" to="/">
               Home
-            </a>
+            </Link>
           </li>
-          {login ? (
+          {user ? (
             <>
               <li className="nav-item">
-                <a className="nav-link" href="/public#/editor">
+                <Link className="nav-link" to="/editor">
                   <i className="ion-compose" />
                   &nbsp;New Article
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/public#/settings">
+                <Link className="nav-link" to="/settings">
                   <i className="ion-gear-a" />
                   &nbsp;Settings
-                </a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={`/profile/${user.username}`}>
+                  <i className="ion-person" />
+                  &nbsp;{user.username}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <button className="nav-link" onClick={handleLogout}>
+                  &nbsp;Logout
+                </button>
               </li>
             </>
           ) : (
             <>
               <li className="nav-item">
-                <a className="nav-link" href="/public#/login">
+                <Link className="nav-link" to="/login">
                   Sign in
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/public#/register">
+                <Link className="nav-link" to="/register">
                   Sign up
-                </a>
+                </Link>
               </li>
             </>
           )}
