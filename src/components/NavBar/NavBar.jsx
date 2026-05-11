@@ -1,12 +1,17 @@
 import './NavBar.css'
-import { Link } from 'react-router-dom'; // Import Link
+import { Link, useLocation } from 'react-router-dom';
 import { useUser } from '../../contexts/UserContext';
 
 export const NavBar = () => {
   const { user, setUser } = useUser();
+  const location = useLocation();
 
   const handleLogout = () => {
     setUser(null);
+  };
+
+  const getNavLinkClass = (path) => {
+    return `nav-link ${location.pathname === path ? 'active' : ''}`;
   };
 
   return (
@@ -17,26 +22,26 @@ export const NavBar = () => {
         </Link>
         <ul className="nav navbar-nav pull-xs-right">
           <li className="nav-item">
-            <Link className="nav-link active" to="/">
+            <Link className={getNavLinkClass('/')} to="/">
               Home
             </Link>
           </li>
           {user ? (
             <>
               <li className="nav-item">
-                <Link className="nav-link" to="/editor">
+                <Link className={getNavLinkClass('/editor')} to="/editor">
                   <i className="ion-compose" />
                   &nbsp;New Article
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/settings">
+                <Link className={getNavLinkClass('/settings')} to="/settings">
                   <i className="ion-gear-a" />
                   &nbsp;Settings
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to={`/profile/${user.username}`}>
+                <Link className={getNavLinkClass(`/profile/${user.username}`)} to={`/profile/${user.username}`}>
                   <i className="ion-person" />
                   &nbsp;{user.username}
                 </Link>
@@ -50,12 +55,12 @@ export const NavBar = () => {
           ) : (
             <>
               <li className="nav-item">
-                <Link className="nav-link" to="/login">
+                <Link className={getNavLinkClass('/login')} to="/login">
                   Sign in
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/register">
+                <Link className={getNavLinkClass('/register')} to="/register">
                   Sign up
                 </Link>
               </li>

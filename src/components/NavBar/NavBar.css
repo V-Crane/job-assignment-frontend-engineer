@@ -1,9 +1,68 @@
 .navbar {
-    display: flex;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 
     .container {
         display: flex;
         width: 100%;
         justify-content: space-between;
+        align-items: center;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .navbar-brand {
+        font-family: "Titillium Web", sans-serif;
+        font-size: 1.5rem;
+        color: #5cb85c;
+        text-decoration: none;
+        margin-right: 2rem;
+    }
+
+    .navbar-brand:hover {
+        color: #449d44;
+    }
+
+    .navbar-nav {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-item {
+        margin-left: 1rem;
+    }
+
+    .nav-link {
+        color: rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+        padding: 0.5rem 0;
+        transition: color 0.2s ease-in-out;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: rgba(0, 0, 0, 0.8);
+    }
+
+    .nav-link.active {
+        font-weight: bold;
+    }
+
+    .nav-link i {
+        margin-right: 0.25rem;
+    }
+
+    button.nav-link {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
     }
 }

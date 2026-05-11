@@ -1,4 +1,43 @@
 .footer-container {
-    display: flex;
+    background-color: #f3f3f3;
+    padding: 0 0 0.5rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.09);
     margin-top: auto;
+
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-font {
+        font-family: "Titillium Web", sans-serif;
+        font-size: 1.5rem;
+        color: #5cb85c;
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .logo-font:hover {
+        color: #449d44;
+    }
+
+    .attribution {
+        font-size: 0.8rem;
+        color: #aaa;
+    }
+
+    .attribution a {
+        color: #5cb85c;
+        text-decoration: none;
+    }
+
+    .attribution a:hover {
+        text-decoration: underline;
+    }
 }
