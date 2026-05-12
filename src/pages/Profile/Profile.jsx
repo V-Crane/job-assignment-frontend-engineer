@@ -68,7 +68,7 @@ export const Profile = () => {
         <div className="row">
           <div className="col-xs-12 col-md-9 mx-auto">
             {profileArticles && profileArticles.length > 0 ? (
-              <Articles articles={profileArticles} onUpdate={updateArticle} />
+              <Articles articles={profileArticles} updateArticle={updateArticle} />
             ) : (
               <div className="article-preview">No articles are here... yet.</div>
             )}

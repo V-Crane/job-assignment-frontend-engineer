@@ -41,7 +41,7 @@ export const ArticleList = () => {
         <div className="container page">
           <div className="row">
             <div className="col-md-9">
-              <Articles articles={articles} onUpdate={updateArticle} />
+              <Articles articles={articles} updateArticle={updateArticle} />
             </div>
           </div>
         </div>

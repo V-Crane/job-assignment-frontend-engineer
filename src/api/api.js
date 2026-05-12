@@ -105,6 +105,7 @@ export const unfollowAuthor = async (username) => {
   return handleResponse(response);
 };
 
+// TODO: Bug: the 'following' field is not returned correctly by this endpoint.
 export const getProfile = async (username) => {
   const headers = { "Content-Type": "application/json" };
 
