@@ -31,7 +31,7 @@ export const FavoriteButton = ({ favoritesCount, favorited, slug, onUpdate }) =>
   };
 
   return (
-    <button className={buttonClassName} onClick={onFavoriteClick}>
+    <button className={buttonClassName} onClick={onFavoriteClick} aria-label="favorite">
       <i className={iconClassName} /> {favoritesCount}
     </button>
   );
