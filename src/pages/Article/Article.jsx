@@ -12,7 +12,6 @@ export default function Article() {
     const loadArticle = async () => {
       try {
         const response = await getArticle(slug);
-        console.log(response)
         setArticle(response.article);
       } catch (e) {
         console.error("Failed to load article", e);

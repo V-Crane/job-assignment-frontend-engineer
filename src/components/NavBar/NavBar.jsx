@@ -1,6 +1,6 @@
-import './NavBar.css'
-import { Link, useLocation } from 'react-router-dom';
-import { useUser } from '../../contexts/UserContext';
+import "./NavBar.css";
+import { Link, useLocation } from "react-router-dom";
+import { useUser } from "../../contexts/UserContext";
 
 export const NavBar = () => {
   const { user, setUser } = useUser();
@@ -8,10 +8,11 @@ export const NavBar = () => {
 
   const handleLogout = () => {
     setUser(null);
+    localStorage.removeItem("jwtToken");
   };
 
-  const getNavLinkClass = (path) => {
-    return `nav-link ${location.pathname === path ? 'active' : ''}`;
+  const getNavLinkClass = path => {
+    return `nav-link ${location.pathname === path ? "active" : ""}`;
   };
 
   return (
@@ -22,20 +23,20 @@ export const NavBar = () => {
         </Link>
         <ul className="nav navbar-nav pull-xs-right">
           <li className="nav-item">
-            <Link className={getNavLinkClass('/')} to="/">
+            <Link className={getNavLinkClass("/")} to="/">
               Home
             </Link>
           </li>
           {user ? (
             <>
               <li className="nav-item">
-                <Link className={getNavLinkClass('/editor')} to="/editor">
+                <Link className={getNavLinkClass("/editor")} to="/editor">
                   <i className="ion-compose" />
                   &nbsp;New Article
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className={getNavLinkClass('/settings')} to="/settings">
+                <Link className={getNavLinkClass("/settings")} to="/settings">
                   <i className="ion-gear-a" />
                   &nbsp;Settings
                 </Link>
@@ -55,12 +56,12 @@ export const NavBar = () => {
           ) : (
             <>
               <li className="nav-item">
-                <Link className={getNavLinkClass('/login')} to="/login">
+                <Link className={getNavLinkClass("/login")} to="/login">
                   Sign in
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className={getNavLinkClass('/register')} to="/register">
+                <Link className={getNavLinkClass("/register")} to="/register">
                   Sign up
                 </Link>
               </li>
@@ -70,4 +71,4 @@ export const NavBar = () => {
       </div>
     </nav>
   );
-}
+};

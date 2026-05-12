@@ -1,15 +1,14 @@
-import './FavoriteButton.css';
+import "./FavoriteButton.css";
 import { useUser } from "../../contexts/UserContext";
 import { favoriteAnArticle, unfavoriteAnArticle } from "../../api/api";
-import { useHistory } from "react-router-dom"
-
+import { useHistory } from "react-router-dom";
 
 export const FavoriteButton = ({ favoritesCount, favorited, slug, onUpdate }) => {
   const { user } = useUser();
-  const history = useHistory()
+  const history = useHistory();
 
-  const iconClassName = favorited ? 'ion-ios-heart' : 'ion-ios-heart-outline';
-  const buttonClassName = `favorite-button ${favorited ? 'favorited' : ''}`;
+  const iconClassName = favorited ? "ion-ios-heart" : "ion-ios-heart-outline";
+  const buttonClassName = `favorite-button ${favorited ? "favorited" : ""}`;
 
   const onFavoriteClick = async () => {
     if (user) {
@@ -27,7 +26,7 @@ export const FavoriteButton = ({ favoritesCount, favorited, slug, onUpdate }) =>
         console.error("Failed to favorite/unfavorite article:", e);
       }
     } else {
-      history.push('/login');
+      history.push("/login");
     }
   };
 

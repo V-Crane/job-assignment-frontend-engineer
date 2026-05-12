@@ -2,7 +2,7 @@ import { AuthorIcon } from "../AuthorIcon/AuthorIcon";
 import { Link } from "react-router-dom";
 import { articleDateFormatter } from "../../services/services";
 import { FavoriteButton } from "../FavoriteButton/FavoriteButton";
-import './Articles.css'
+import "./Articles.css";
 
 export const Articles = ({ articles, updateArticle }) => {
   return articles.map(article => {

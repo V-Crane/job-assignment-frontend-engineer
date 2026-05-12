@@ -1,7 +1,7 @@
 import { useUser } from "../../contexts/UserContext";
 import { followAuthor, unfollowAuthor } from "../../api/api";
 import { useHistory } from "react-router-dom";
-import './FollowAuthor.css'
+import "./FollowAuthor.css";
 
 export const FollowAuthor = ({ username, following, onUpdate }) => {
   const { user } = useUser();

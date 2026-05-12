@@ -33,7 +33,7 @@ export const LoginRegister = () => {
         userData = await loginUser(email, password);
       } else {
         setErrors(["Registration not implemented."]);
-        return
+        return;
         //userData = await registerUser(username, email, password);
       }
 

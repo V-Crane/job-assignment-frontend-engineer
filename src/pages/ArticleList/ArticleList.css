@@ -11,7 +11,7 @@
         font-weight: 700;
         font-size: 3.5rem;
         margin-bottom: 0.5rem;
-        text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
 
     .banner p {
@@ -19,9 +19,11 @@
         font-weight: 300;
     }
 
-    .container.page {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 0 15px;
-    }
+
+}
+
+.container.page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getArticles, getProfile } from "../../api/api";
 import { FollowAuthor } from "../../components/FollowAuthor/FollowAuthor";
 import { Articles } from "../../components/Articles/Articles";
